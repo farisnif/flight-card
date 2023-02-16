@@ -30,19 +30,16 @@
   
   <script type="module" src="./src/flight-card.js"></script>
   <script>
-    document.querySelector(".somethingelse")
-  .addEventListener("click", function changeHeading(e) {
+    document.querySelector(".somethingelse").addEventListener("click", function changeHeading(e) {
     document.querySelector("h1").innerHTML = "something else";
   });
 
-document.querySelector(".addOne")
-  .addEventListener("click", function addCard(e) {
+document.querySelector(".addOne").addEventListener("click", function addCard(e) {
     const cardWhole = document.querySelector(".crd").cloneNode(true);
     document.body.appendChild(cardWhole);
   });
 
-document.querySelector(".remove")
-  .addEventListener("click", function removeCard(e) {
+document.querySelector(".remove").addEventListener("click", function removeCard(e) {
     const cardWhole = document.querySelector(".crd").parentNode;
     cardWhole.removeChild(cardWhole.lastChild);
   });
@@ -56,7 +53,7 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
     }
   });
 
-document.querySelector(".details").addEventListener("click", function textVisibility(e) {
+document.querySelector(".details").addEventListener('click', function textVisibility(e) {
     var info = document.querySelector("p");
     if (info.style.display === "none") {
       info.style.display = "block";
