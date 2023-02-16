@@ -45,7 +45,7 @@ document.querySelector(".remove").addEventListener("click", function removeCard(
   });
 
 document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
-    const div = document.querySelector("div");
+    const div = document.querySelector("div"); //this possibly needs to be made to "container" instead of "div"
     if (div.style.backgroundColor != "red") {
       div.style.backgroundColor = "red";
     } else {
