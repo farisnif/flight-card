@@ -158,13 +158,12 @@ p{
   <div class="buttons">
     <button class="details">Details</button>
   </div>
-</div>
-
-    <meme-maker image-url="http://res.cloudinary.com/big-cabal/image/upload/w_700,f_auto,fl_lossy,q_auto/v1484916770/sense_jilgk7.png"
+  <meme-maker image-url="https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg"
       top-text="You can't fail your tests"
       bottom-text="If you don't write any"
       font-size="28px">
     </meme-maker>
+</div>
     `;
   }
 }
