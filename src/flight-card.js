@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 export class FlightCard extends LitElement {
   static get properties() {
@@ -158,6 +159,12 @@ p{
     <button class="details">Details</button>
   </div>
 </div>
+
+    <meme-maker image-url="http://res.cloudinary.com/big-cabal/image/upload/w_700,f_auto,fl_lossy,q_auto/v1484916770/sense_jilgk7.png"
+      top-text="You can't fail your tests"
+      bottom-text="If you don't write any"
+      font-size="28px">
+    </meme-maker>
     `;
   }
 }
