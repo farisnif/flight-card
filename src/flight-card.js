@@ -1,6 +1,8 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
+const planePhoto = new URL("https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg").href;
+
 export class FlightCard extends LitElement {
   static get properties() {
     return{
@@ -9,6 +11,13 @@ export class FlightCard extends LitElement {
         reflect: true
       }
     }
+  }
+
+  constructor() {
+    super();
+    this.name = "Boeing 787";
+    this.location = "Cleveland, Ohio";
+    this.planeStatement = "This is a photo of a Boeing 787 taking off in " + this.location;
   }
 
   static get styles(){
@@ -153,31 +162,26 @@ p{
 }
     `;
   }
-  constructor() {
-    super();
-    this.version = 'STARTING';
-
-  }
 
   render() {
     return html`
     <div class="crd">
     <div class="container">
     <div class="header">
-      <h1>A Picture of a Sunset</h1>
+      <h1>${this.name}</h1>
     </div>
-    <img class="image" src="https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg" alt="A picture"/>
+    <img class="image" src="${planePhoto}" alt="A picture"/>
       <div class="subheader">
-        <h2>A Picture of a Plane in a Sunset</h2>
+        <h2>${this.location}</h2>
       </div>
   </div>
   <div class="paragraph">
-    <p>This is a picture of a Boeing 787 taking off during sunset.</p>
+    <p>${this.planeStatement}</p>
   </div>
 
   <button class="details">Details</button>
 
-  <meme-maker image-url="https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg"
+  <meme-maker image-url="${planePhoto}"
       top-text="You can't fail your tests"
       bottom-text="If you don't write any"
       font-size="28px">
