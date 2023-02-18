@@ -54,7 +54,7 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
   });
 
 document.querySelector('flight-card').shadowRoot.querySelector('.details').addEventListener('click', function textVisibility(e) { //not working
-  var info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, i think meme-maker might be blocking it?
+  var info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
     if (info.style.display === "none") {
       info.style.display = "block";
     } else {
