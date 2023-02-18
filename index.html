@@ -23,29 +23,29 @@
   <div class="'buttons">
     <button class="somethingelse">Something Else</button>
     <button class="addOne">Add</button>
-    <button class="remove">Delete One</button>
     <button class="colorChanger">Color Changer</button>
+    <button class="remove">Delete One</button>
   </div>
     <flight-card></flight-card>
 
   <script type="module" src="./src/flight-card.js"></script>
   <script>
     document.querySelector(".somethingelse").addEventListener("click", function changeHeading(e) {
-    document.querySelector("h1").innerHTML = "something else";
+    document.querySelector('flight-card').shadowRoot.querySelector("h1").innerHTML = "something else";
   });
 
 document.querySelector(".addOne").addEventListener("click", function addCard(e) {
-    const cardWhole = document.querySelector(".crd").cloneNode(true);
+    const cardWhole = document.querySelector('flight-card').cloneNode(true);
     document.body.appendChild(cardWhole);
   });
 
 document.querySelector(".remove").addEventListener("click", function removeCard(e) {
-    const cardWhole = document.querySelector(".crd").parentNode;
-    cardWhole.removeChild(cardWhole.lastChild);
+    const cardWhole = document.querySelector('flight-card').parentNode;
+    cardWhole.removeChild(cardWhole.lastChild); //for some reason if I keep spamming delete one button it eventually deletes the final card
   });
 
 document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
-    const div = document.querySelector("div"); //this possibly needs to be made to "container" instead of "div"
+    const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
     if (div.style.backgroundColor != "red") {
       div.style.backgroundColor = "red";
     } else {
@@ -53,15 +53,14 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
     }
   });
 
-document.querySelector(".details").addEventListener('click', function textVisibility(e) {
-    var info = document.querySelector("p");
+document.querySelector('flight-card').shadowRoot.querySelector('.details').addEventListener('click', function textVisibility(e) { //not working
+  var info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, i think meme-maker might be blocking it?
     if (info.style.display === "none") {
       info.style.display = "block";
     } else {
       info.style.display = "none";
     }
   });
-
   </script>
 </body>
 
