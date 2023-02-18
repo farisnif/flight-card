@@ -11,7 +11,6 @@
     "storybook": "npm run analyze -- --exclude dist && web-dev-server -c .storybook/server.mjs",
     "storybook:build": "npm run analyze -- --exclude dist && build-storybook",
     "build": "rimraf dist && rollup -c rollup.config.js && npm run analyze -- --exclude dist",
-    "build": "flight-card build --output public",
     "start:build": "web-dev-server --root-dir dist --app-index index.html --open",
     "analyze": "cem analyze --litelement",
     "start": "web-dev-server"
