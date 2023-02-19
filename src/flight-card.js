@@ -20,6 +20,8 @@ export class FlightCard extends LitElement {
     this.maxSpeed = "500mph";
     this.maxAltitude = "40,000ft"
     this.planeStatement = "This is a photo of a Boeing 787 taking off in " + this.location + ". This plane has a maximum speed of " + this.maxSpeed + ", and maximum altitude of " + this.maxAltitude + ".";
+    this.memeTop = "meme";
+    this.memeBottom = "yo";
   }
 
   static get styles(){
@@ -186,8 +188,8 @@ p{
   <button class="details">Details</button>
 
     <meme-maker image-url="${planePhoto}"
-      top-text="You can't fail your tests"
-      bottom-text="If you don't write any"
+      top-text="${this.memeTop} ${this.name}"
+      bottom-text="${this.memeBottom} ${this.location}"
       font-size="28px">
     </meme-maker>
 </div>
