@@ -174,7 +174,9 @@ p{
     </div>
     <img class="image" src="${planePhoto}" alt="A picture"/>
       <div class="subheader">
-        <h2>${this.location}</h2>
+        <h2>Location: ${this.location}</h2>
+        <h2>Max Speed: ${this.maxSpeed}</h2>
+        <h2>Max Altitude: ${this.maxAltitude}</h2>
       </div>
   </div>
   <div class="paragraph">
