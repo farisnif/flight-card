@@ -25,8 +25,18 @@
     <button class="addOne">Add</button>
     <button class="colorChanger">Color Changer</button>
     <button class="remove">Delete One</button>
+    <button onclick="toggleDetails()" class="details">Toggle Details</button>
   </div>
-    <flight-card></flight-card>
+    <flight-card>
+
+    Statistics
+      <ol>
+        <li>Used by:</li>
+        <li>Capacity:</li>
+        <li>Involved in Crashes:</li>
+      </ol>
+
+    </flight-card>
 
   <script type="module" src="./src/flight-card.js"></script>
   <script>
@@ -40,8 +50,15 @@ document.querySelector(".addOne").addEventListener("click", function addCard(e) 
   });
 
 document.querySelector(".remove").addEventListener("click", function removeCard(e) {
-    const cardWhole = document.querySelector('flight-card').parentNode;
-    cardWhole.removeChild(cardWhole.lastChild); //for some reason if I keep spamming delete one button it eventually deletes the final card
+    // const cardWhole = document.querySelector('flight-card').parentNode;
+    // cardWhole.removeChild(cardWhole.lastChild); //for some reason if I keep spamming delete one button it eventually deletes the final card
+    const allCards = document.querySelectorAll('flight-card');
+    console.log(allCards);
+    console.log(allCards.length)
+    if (allCards.length > 1) {
+      console.log(allCards[allCards.length - 1]);
+      document.body.removeChild(allCards[allCards.length - 1])
+    }
   });
 
 document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
@@ -62,9 +79,9 @@ document.querySelector('flight-card').shadowRoot.querySelector(".details").addEv
     }
   });
 
-toggleDetails(){
-  this.shadowRoot.querySelector('.details').toggleAttribute('open');
-}
+  function toggleDetails() {
+    document.querySelector("flight-card").toggleDetails();
+  }
   </script>
 </body>
 
