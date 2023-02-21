@@ -189,7 +189,7 @@ p{
 
     <meme-maker image-url="${planePhoto}"
       top-text="${this.memeTop} ${this.name}"
-      bottom-text=" ${this.location} this is 4 you"
+      bottom-text=" ${this.location} this is for you"
       font-size="28px">
     </meme-maker>
 </div>
