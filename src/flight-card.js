@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 const planePhoto = new URL("https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg").href;
-
+const leBum = new URL("https://s.yimg.com/ny/api/res/1.2/CH9YrAZ77gXGiwcoWwhtDQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQzMw--/https://media.zenfs.com/en_US/News/TheWrap/LeBron_Screaming_Meme_Will_Help-498ec79d8185bca477d11846d7de03fa").href;
 export class FlightCard extends LitElement {
   static get properties() {
     return{
@@ -80,6 +80,7 @@ p{
     red
   );
   }
+
 .somethingelse {
   font-size: 18px;
   display: block;
@@ -185,9 +186,13 @@ p{
     <p>${this.planeStatement}</p>
   </div>
 
-  <button class="details">Details</button>
+  <!-- <button class="details">Details</button> -->
 
-    <meme-maker image-url="${planePhoto}"
+  <details class="details">
+    <p>${this.planeStatement}</p>
+  </details>
+
+    <meme-maker image-url="${leBum}"
       top-text="${this.memeTop} ${this.name}"
       bottom-text=" ${this.location} ${this.memeBottom}"
       font-size="28px">

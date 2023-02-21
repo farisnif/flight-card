@@ -61,6 +61,10 @@ document.querySelector('flight-card').shadowRoot.querySelector(".details").addEv
       info.style.display = "none";
     }
   });
+
+toggleDetails(){
+  this.shadowRoot.querySelector('.details').toggleAttribute('open');
+}
   </script>
 </body>
 
