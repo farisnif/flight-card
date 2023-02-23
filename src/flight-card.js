@@ -14,6 +14,34 @@ export class FlightCard extends LitElement {
         type: String,
         reflect: true,
       },
+      name: {
+        type: String,
+        reflect: true,
+      },
+      location: {
+        type: String,
+        reflect: true,
+      },
+      maxSpeed: {
+        type: String,
+        reflect: true,
+      },
+      maxAltitude: {
+        type: String,
+        reflect: true,
+      },
+      planeStatement: {
+        type: String,
+        reflect: true,
+      },
+      memeTop: {
+        type: String,
+        reflect: true,
+      },
+      memeBottom: {
+        type: String,
+        reflect: true,
+      },
     };
   }
 
