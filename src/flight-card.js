@@ -37,6 +37,11 @@ export class FlightCard extends LitElement {
 
   static get styles() {
     return css`
+      /* :host([accent-color="blue"]) .card {
+        background-color: blueviolet;
+        color: white;
+      } */
+
       .crd {
         padding: 12px;
         background-color: skyblue;
@@ -50,7 +55,7 @@ export class FlightCard extends LitElement {
       }
       h1 {
         font-size: 30px;
-        text-align: center;
+        text-align: var(--team-card-wrapper-text-align, center);
       }
       h2 {
         font-size: 18px;
