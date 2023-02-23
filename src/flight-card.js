@@ -31,7 +31,7 @@ export class FlightCard extends LitElement {
       ", and maximum altitude of " +
       this.maxAltitude +
       ".";
-    this.memeTop = "meme";
+    this.memeTop = "LeComplainer";
     this.memeBottom = "this is for you";
   }
 
@@ -216,7 +216,7 @@ export class FlightCard extends LitElement {
         <meme-maker
           part="meme webcomponent stuff"
           image-url="${memeImage}"
-          top-text="${this.memeTop} ${this.name}"
+          top-text="${this.memeTop}"
           bottom-text=" ${this.location} ${this.memeBottom}"
           font-size="28px"
         >
