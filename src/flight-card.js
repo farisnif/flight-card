@@ -91,6 +91,7 @@ export class FlightCard extends LitElement {
         color: white;
         border: 6px solid orange;
       }
+
       .crd {
         padding: 12px;
         background-color: skyblue;
