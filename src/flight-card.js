@@ -42,6 +42,12 @@ export class FlightCard extends LitElement {
         type: String,
         reflect: true,
       },
+      top: { type: String },
+      accentColor: {
+        type: String,
+        reflect: true,
+        attribute: "accent-color",
+      },
     };
   }
 
@@ -61,6 +67,7 @@ export class FlightCard extends LitElement {
       ".";
     this.memeTop = "LeComplainer";
     this.memeBottom = "this is for you";
+    this.accentColor = null;
   }
 
   static get styles() {
@@ -69,7 +76,21 @@ export class FlightCard extends LitElement {
         background-color: blueviolet;
         color: white;
       } */
-
+      :host([accent-color="red"]) .crd {
+        background-color: var(--flight-card-accent-color, red);
+        color: white;
+        border: 6px solid yellow;
+      }
+      :host([accent-color="green"]) .crd {
+        background-color: var(--flight-card-accent-color, green);
+        color: white;
+        border: 6px solid blue;
+      }
+      :host([accent-color="purple"]) .crd {
+        background-color: var(--flight-card-accent-color, purple);
+        color: white;
+        border: 6px solid orange;
+      }
       .crd {
         padding: 12px;
         background-color: skyblue;
@@ -83,7 +104,7 @@ export class FlightCard extends LitElement {
       }
       h1 {
         font-size: 30px;
-        text-align: var(--team-card-wrapper-text-align, center);
+        text-align: var(--flight-card-wrapper-text-align, center);
       }
       h2 {
         font-size: 18px;

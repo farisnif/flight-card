@@ -14,12 +14,7 @@
       padding: 0;
       font-family: sans-serif;
       background-color: #ededed;
-      --team-card-wrapper-text-align: center;
-    }
-
-    flight-card::part(meme){
-      background-color: violet;
-      padding: 10px;
+      --flight-card-wrapper-text-align: center;
     }
 
   </style>
@@ -68,23 +63,31 @@ document.querySelector(".remove").addEventListener("click", function removeCard(
     }
   });
 
-document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
-    const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
-    if (div.style.backgroundColor != "red") {
-      div.style.backgroundColor = "red";
-    } else {
-      div.style.backgroundColor = "skyblue";
-    }
-  });
+// document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
+//     const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
+//     if (div.style.backgroundColor != "red") {
+//       div.style.backgroundColor = "red";
+//     } else {
+//       div.style.backgroundColor = "skyblue";
+//     }
+//   });
 
-document.querySelector('flight-card').shadowRoot.querySelector(".details").addEventListener("click", function textVisibility(e) { //not working
-  const info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
-    if (info.style.display === "none") {
-      info.style.display = "block";
-    } else {
-      info.style.display = "none";
-    }
-  });
+document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
+     const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
+     const colors = ["red", "green", "purple"]
+     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+     document.querySelector("flight-card").accentColor = randomColor;
+});
+
+// Previous code when I did not have Toggle Details Button - only for comparison reasons
+// document.querySelector('flight-card').shadowRoot.querySelector(".details").addEventListener("click", function textVisibility(e) { //not working
+//   const info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
+//     if (info.style.display === "none") {
+//       info.style.display = "block";
+//     } else {
+//       info.style.display = "none";
+//     }
+//   });
 
   function toggleDetails() {
     document.querySelector("flight-card").toggleDetails();
