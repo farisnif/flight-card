@@ -93,7 +93,7 @@ export class FlightCard extends LitElement {
       }
 
       .crd {
-        padding: 12px;
+        padding: var(--flight-card-wrapper-border-padding, 12px);
         background-color: skyblue;
         border-radius: var(--flight-card-wrapper-border, 12px);
         border: 6px solid black;
@@ -121,7 +121,7 @@ export class FlightCard extends LitElement {
         display: block;
         margin: 0 auto;
         text-align: center;
-        background-color: deeppink;
+        background-color: var(--flight-card-details-background-color, deeppink);
       }
       p {
         text-align: center;
