@@ -5,7 +5,7 @@ const planePhoto = new URL(
   "https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg"
 ).href;
 const memeImage = new URL(
-  "https://s.yimg.com/ny/api/res/1.2/CH9YrAZ77gXGiwcoWwhtDQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQzMw--/https://media.zenfs.com/en_US/News/TheWrap/LeBron_Screaming_Meme_Will_Help-498ec79d8185bca477d11846d7de03fa"
+  "https://media.tenor.com/UygWxuaLUnUAAAAd/lebron-lebron-james.gif"
 ).href;
 export class FlightCard extends LitElement {
   static get properties() {
@@ -65,7 +65,7 @@ export class FlightCard extends LitElement {
       ", and maximum altitude of " +
       this.maxAltitude +
       ".";
-    this.memeTop = "LeComplainer";
+    this.memeTop = "LeDancer";
     this.memeBottom = "this is for you";
     this.accentColor = null;
   }
