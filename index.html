@@ -34,14 +34,15 @@
 </head>
 
 <body>
-  <div class="buttons">
     <button class="somethingelse">Something Else</button>
     <button class="addOne">Add</button>
     <button class="colorChanger">Color Changer</button>
     <button class="remove">Delete One</button>
-    <button onclick="toggleDetails()" class="details">Toggle Details</button>
+    <button class="details-button">Details</button>
+    <!-- <button onclick="toggleDetails()" class="details">Toggle Details</button> -->
   </div>
     <flight-card>
+    
 
     Statistics
       <ol>
@@ -55,7 +56,10 @@
   <script type="module" src="./src/flight-card.js"></script>
   <script>
     document.querySelector(".somethingelse").addEventListener("click", function changeHeading(e) {
-    document.querySelector('flight-card').shadowRoot.querySelector("h1").innerHTML = "something else";
+       let instructions = prompt("Enter new plane name:")
+       if(instructions) {
+        document.querySelector('flight-card').shadowRoot.querySelector("h1").innerHTML = instructions;
+       }
   });
 
 document.querySelector(".addOne").addEventListener("click", function addCard(e) {
@@ -72,8 +76,6 @@ document.querySelector(".remove").addEventListener("click", function removeCard(
       document.body.removeChild(allFlightCards[allFlightCards.length - 1])
     }
   });
-
-
 
 document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
      const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
@@ -92,20 +94,21 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
 //     }
 //   });
 
-  function toggleDetails() {
-    document.querySelector("flight-card").toggleDetails();
-  }
-// doucment.body.addEventListener('opened-changed', (e) => {
-//   console.log(e.detail.value);
-//   document.querySelector('.details').innerText = e.detail.value ? 'Hide Details' : 'Show Details';
-//   console.log('opened-changed', e.detail, e.target);
-//  });
+  //WORKED  function toggleDetails() {
+  //   document.querySelector("flight-card").toggleDetails();
+  // }
+
+document.body.addEventListener('opened-changed', (e) => {
+  console.log(e.detail.value);
+  document.querySelector('.details-button').innerText = e.detail.value ? 'Hide Details' : 'Show Details';
+  console.log('opened-changed', e.detail, e.target);
+ });
 
 
-//   document.querySelector('.details').addEventListener('click', (e) => {
-//     const card = document.querySelector('flight-card');
-//     card.opened = !card.opened;
-//   });
+  document.querySelector('.details-button').addEventListener('click', (e) => {
+    const card = document.querySelector('flight-card');
+    card.opened = !card.opened;
+  });
 
   </script>
 </body>

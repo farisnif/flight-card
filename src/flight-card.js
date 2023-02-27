@@ -48,7 +48,7 @@ export class FlightCard extends LitElement {
         reflect: true,
         attribute: "accent-color",
       },
-      // opened: { type: Boolean, reflect: true },
+      opened: { type: Boolean, reflect: true },
     };
   }
 
@@ -69,35 +69,35 @@ export class FlightCard extends LitElement {
     this.memeTop = "LeDancer";
     this.memeBottom = "this is for you";
     this.accentColor = null;
-    // this.opened = false;
+    this.opened = false;
   }
 
-  // toggleEvent(e) {
-  //   const status =
-  //     this.shadowRoot.querySelector("details").getAttribute("open") === ""
-  //       ? true
-  //       : false;
-  //   this.opened = status;
-  //   console.log(this.opened);
-  // }
+  toggleEvent(e) {
+    const state =
+      this.shadowRoot.querySelector("details").getAttribute("open") === ""
+        ? true
+        : false;
+    this.opened = state;
+    console.log(this.opened);
+  }
 
-  // updated(changedProperties) {
-  //   changedProperties.forEach((oldValue, propName) => {
-  //     if (propName === "opened") {
-  //       this.dispatchEvent(
-  //         new CustomEvent("opened-changed", {
-  //           composed: true,
-  //           bubbles: true,
-  //           cancelable: false,
-  //           detail: {
-  //             value: this[propName],
-  //           },
-  //         })
-  //       );
-  //       console.log("${propName} changed. oldValue: ${oldValue}");
-  //     }
-  //   });
-  // }
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === "opened") {
+        this.dispatchEvent(
+          new CustomEvent("opened-changed", {
+            composed: true,
+            bubbles: true,
+            cancelable: false,
+            detail: {
+              value: this[propName],
+            },
+          })
+        );
+        console.log(`${propName} changed. oldValue: ${oldValue}`);
+      }
+    });
+  }
 
   static get styles() {
     return css`
@@ -262,9 +262,9 @@ export class FlightCard extends LitElement {
     `;
   }
 
-  toggleDetails() {
-    this.shadowRoot.querySelector(".details").toggleAttribute("open");
-  }
+  // toggleDetails() {
+  //   this.shadowRoot.querySelector(".details").toggleAttribute("open");
+  // }
 
   render() {
     return html`
@@ -285,8 +285,8 @@ export class FlightCard extends LitElement {
           class="details"
           .open="${this.opened}"
           @toggle="${this.toggleEvent}"
-          @click="${this.clickEvent}"
         >
+          <summary>Click to see more!</summary>
           <p>${this.planeStatement}</p>
           <slot></slot>
         </details>
