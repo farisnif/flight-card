@@ -82,7 +82,7 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
      document.querySelector("flight-card").accentColor = randomColor;
 });
 
-// Previous code when I did not have Toggle Details Button - only for comparison reasons
+// // Previous code when I did not have Toggle Details Button - only for comparison reasons
 // document.querySelector('flight-card').shadowRoot.querySelector(".details").addEventListener("click", function textVisibility(e) { //not working
 //   const info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
 //     if (info.style.display === "none") {
@@ -94,7 +94,20 @@ document.querySelector(".colorChanger").addEventListener("click", function chang
 
   function toggleDetails() {
     document.querySelector("flight-card").toggleDetails();
+  
   }
+// doucment.body.addEventListener('opened-changed', (e) => {
+//   console.log(e.detail.value);
+//   document.querySelector('.details').innerText = e.detail.value ? 'Hide Details' : 'Show Details';
+//   console.log('opened-changed', e.detail, e.target);
+//  });
+
+
+//   document.querySelector('.details').addEventListener('click', (e) => {
+//     const card = document.querySelector('flight-card');
+//     card.opened = !card.opened;
+//   });
+
   </script>
 </body>
 

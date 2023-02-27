@@ -42,12 +42,13 @@ export class FlightCard extends LitElement {
         type: String,
         reflect: true,
       },
-      top: { type: String },
-      accentColor: {
-        type: String,
-        reflect: true,
-        attribute: "accent-color",
-      },
+      // top: { type: String },
+      // accentColor: {
+      //   type: String,
+      //   reflect: true,
+      //   attribute: "accent-color",
+      // },
+      // opened: { type: Boolean, reflect: true },
     };
   }
 
@@ -68,7 +69,35 @@ export class FlightCard extends LitElement {
     this.memeTop = "LeDancer";
     this.memeBottom = "this is for you";
     this.accentColor = null;
+    // this.opened = false;
   }
+
+  // toggleEvent(e) {
+  //   const status =
+  //     this.shadowRoot.querySelector("details").getAttribute("open") === ""
+  //       ? true
+  //       : false;
+  //   this.opened = status;
+  //   console.log(this.opened);
+  // }
+
+  // updated(changedProperties) {
+  //   changedProperties.forEach((oldValue, propName) => {
+  //     if (propName === "opened") {
+  //       this.dispatchEvent(
+  //         new CustomEvent("opened-changed", {
+  //           composed: true,
+  //           bubbles: true,
+  //           cancelable: false,
+  //           detail: {
+  //             value: this[propName],
+  //           },
+  //         })
+  //       );
+  //       console.log("${propName} changed. oldValue: ${oldValue}");
+  //     }
+  //   });
+  // }
 
   static get styles() {
     return css`
@@ -252,13 +281,12 @@ export class FlightCard extends LitElement {
           </div>
         </div>
 
-        <!-- <div class="paragraph">
-          <p>${this.planeStatement}</p>
-        </div> -->
-
-        <!-- <button class="details">Details</button> -->
-
-        <details class="details">
+        <details
+          class="details"
+          .open="${this.opened}"
+          @toggle="${this.toggleEvent}"
+          @click="${this.clickEvent}"
+        >
           <p>${this.planeStatement}</p>
           <slot></slot>
         </details>
