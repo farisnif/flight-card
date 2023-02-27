@@ -42,12 +42,12 @@ export class FlightCard extends LitElement {
         type: String,
         reflect: true,
       },
-      // top: { type: String },
-      // accentColor: {
-      //   type: String,
-      //   reflect: true,
-      //   attribute: "accent-color",
-      // },
+      top: { type: String },
+      accentColor: {
+        type: String,
+        reflect: true,
+        attribute: "accent-color",
+      },
       // opened: { type: Boolean, reflect: true },
     };
   }
