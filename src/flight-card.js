@@ -262,10 +262,6 @@ export class FlightCard extends LitElement {
     `;
   }
 
-  // toggleDetails() {
-  //   this.shadowRoot.querySelector(".details").toggleAttribute("open");
-  // }
-
   render() {
     return html`
       <div class="crd">
