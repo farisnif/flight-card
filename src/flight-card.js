@@ -42,6 +42,10 @@ export class FlightCard extends LitElement {
         type: String,
         reflect: true,
       },
+      altText: {
+        type: String,
+        reflect: true,
+      },
       top: { type: String },
       accentColor: {
         type: String,
@@ -70,6 +74,7 @@ export class FlightCard extends LitElement {
     this.memeBottom = "this is for you";
     this.accentColor = null;
     this.opened = false;
+    this.altText = "A picture";
   }
 
   toggleEvent(e) {
@@ -123,7 +128,7 @@ export class FlightCard extends LitElement {
 
       .crd {
         padding: var(--flight-card-wrapper-border-padding, 12px);
-        background-color: skyblue;
+        background-color: var(--flight-card-wrapper-color, skyblue);
         border-radius: var(--flight-card-wrapper-border, 12px);
         border: 6px solid black;
         max-width: 300px;
@@ -133,11 +138,11 @@ export class FlightCard extends LitElement {
         width: 100%;
       }
       h1 {
-        font-size: 30px;
+        font-size: var(--flight-card-header-font-size, 30px);
         text-align: var(--flight-card-wrapper-text-align, center);
       }
       h2 {
-        font-size: 18px;
+        font-size: var(--flight-card-subheader-font-size, 18px);
         text-align: center;
       }
       .buttons {
@@ -269,7 +274,7 @@ export class FlightCard extends LitElement {
           <div class="header">
             <h1>${this.name}</h1>
           </div>
-          <img class="image" src="${planePhoto}" alt="A picture" />
+          <img class="image" src="${planePhoto}" alt="${this.altText}" />
           <div class="subheader">
             <h2>Location: ${this.location}</h2>
             <h2>Max Speed: ${this.maxSpeed}</h2>
