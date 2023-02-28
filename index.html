@@ -1,122 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <base href="/" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #ededed;
+        --flight-card-wrapper-text-align: center;
+        --flight-card-wrapper-color: rgb(41, 161, 201);
+        --flight-card-details-background-color: rgb(24, 184, 77);
+        --flight-card-wrapper-border-padding: 12px;
+        --flight-card-wrapper-border: 12px;
+        --flight-card-header-font-size: 30px;
+        --flight-card-subheader-font-size: 18px;
+        --flight-card-details-text-allign: center;
+      }
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-      --flight-card-wrapper-text-align: center;
-      --flight-card-wrapper-color: rgb(41, 161, 201);
-      --flight-card-details-background-color: rgb(24, 184, 77);
-      --flight-card-wrapper-border-padding: 12px;
-      --flight-card-wrapper-border: 12px;
-      --flight-card-header-font-size: 30px;
-      --flight-card-subheader-font-size: 18px;
-      --flight-card-details-text-allign: center;
+      flight-card::part(meme webcomponent stuff) {
+        margin: 6px;
+      }
 
-      
-    }
-
-    flight-card::part(meme webcomponent stuff) {
-      margin: 6px;
-    }
-    
       /* flight-card[accent-color="earth"] {
         --flight-card-accent-color: pink;
       } */
-    
+    </style>
+    <title>flight-card</title>
+  </head>
 
-  </style>
-  <title>flight-card</title>
-</head>
-
-<body>
-  <div class="buttons">
-    <button class="somethingelse">Change Title</button>
-    <button class="addOne">Add</button>
-    <button class="colorChanger">Color Changer</button>
-    <button class="remove">Delete One</button>
-    <button class="details-button">Details</button>
-  </div>
-    <flight-card>
-    
-
-    Statistics
-      <ol>
-        <li>Used by:</li>
-        <li>Capacity:</li>
-        <li>Involved in Crashes:</li>
-      </ol>
-
+  <body>
+    <div class="buttons">
+      <button class="somethingelse">Change Title</button>
+      <button class="addOne">Add</button>
+      <button class="colorChanger">Color Changer</button>
+      <button class="remove">Delete One</button>
+      <button class="details-button">Details</button>
+    </div>
+    <flight-card name="Boeing">
+      <div>
+        Statistics
+        <ul>
+          <li>Used by:</li>
+          <li>Capacity:</li>
+          <li>Involved in Crashes:</li>
+        </ul>
+      </div>
     </flight-card>
 
-  <script type="module" src="./src/flight-card.js"></script>
-  <script>
-    document.querySelector(".somethingelse").addEventListener("click", function changeHeading(e) {
-       let instructions = prompt("Enter new plane name:");
-       if(instructions) {
-        document.querySelector('flight-card').shadowRoot.querySelector("h1").innerHTML = instructions;
-       }
-  });
+    <script type="module" src="./src/flight-card.js"></script>
+    <script>
+      document
+        .querySelector(".somethingelse")
+        .addEventListener("click", function changeHeading(e) {
+          let instructions = prompt("Enter new plane name:");
+          if (instructions) {
+            // document
+            //   .querySelector("flight-card")
+            //   .shadowRoot.querySelector("h1").innerText = instructions;
+            document.querySelector("flight-card").name = instructions;
+          }
+        });
 
-document.querySelector(".addOne").addEventListener("click", function addCard(e) {
-    const cardWhole = document.querySelector('flight-card').cloneNode(true);
-    document.body.appendChild(cardWhole);
-  });
+      document
+        .querySelector(".addOne")
+        .addEventListener("click", function addCard(e) {
+          const cardWhole = document
+            .querySelector("flight-card")
+            .cloneNode(true);
+          document.body.appendChild(cardWhole);
+        });
 
-document.querySelector(".remove").addEventListener("click", function removeCard(e) {
-    const allFlightCards = document.querySelectorAll('flight-card');
-    console.log(allFlightCards);
-    console.log(allFlightCards.length);
-    if (allFlightCards.length > 1) {
-      console.log(allFlightCards[allFlightCards.length - 1]);
-      document.body.removeChild(allFlightCards[allFlightCards.length - 1]);
-    }
-  });
+      document
+        .querySelector(".remove")
+        .addEventListener("click", function removeCard(e) {
+          const allFlightCards = document.querySelectorAll("flight-card");
+          console.log(allFlightCards);
+          console.log(allFlightCards.length);
+          if (allFlightCards.length > 1) {
+            console.log(allFlightCards[allFlightCards.length - 1]);
+            document.body.removeChild(
+              allFlightCards[allFlightCards.length - 1]
+            );
+          }
+        });
 
-document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
-     const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
-     const colors = ["red", "green", "purple", "black", "orange", "violet"];
-     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-     document.querySelector("flight-card").accentColor = randomColor;
-});
+      document
+        .querySelector(".colorChanger")
+        .addEventListener("click", function changeColor(e) {
+          const div = document
+            .querySelector("flight-card")
+            .shadowRoot.querySelector(".crd");
+          const colors = [
+            "red",
+            "green",
+            "purple",
+            "black",
+            "orange",
+            "violet",
+          ];
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          document.querySelector("flight-card").accentColor = randomColor;
+        });
 
-// Previous code when I did not have Toggle Details Button - only for comparison reasons
-// document.querySelector('flight-card').shadowRoot.querySelector(".details").addEventListener("click", function textVisibility(e) { //not working
-//   const info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
-//     if (info.style.display === "none") {
-//       info.style.display = "block";
-//     } else {
-//       info.style.display = "none";
-//     }
-//   });
+      // Previous code when I did not have Toggle Details Button - only for comparison reasons
+      // document.querySelector('flight-card').shadowRoot.querySelector(".details").addEventListener("click", function textVisibility(e) { //not working
+      //   const info = document.querySelector('flight-card').shadowRoot.querySelector("p"); //it is finding the paragraph in console, meme-maker is not blocking it
+      //     if (info.style.display === "none") {
+      //       info.style.display = "block";
+      //     } else {
+      //       info.style.display = "none";
+      //     }
+      //   });
 
-  //WORKED  function toggleDetails() {
-  //   document.querySelector("flight-card").toggleDetails();
-  // }
+      //WORKED  function toggleDetails() {
+      //   document.querySelector("flight-card").toggleDetails();
+      // }
 
-document.body.addEventListener('opened-changed', (e) => {
-  console.log(e.detail.value);
-  document.querySelector('.details-button').innerText = e.detail.value ? 'Hide Details' : 'Show Details';
-  console.log('opened-changed', e.detail, e.target);
- });
+      document.body.addEventListener("opened-changed", (e) => {
+        console.log(e.detail.value);
+        document.querySelector(".details-button").innerText = e.detail.value
+          ? "Hide Details"
+          : "Show Details";
+        console.log("opened-changed", e.detail, e.target);
+      });
 
-
-  document.querySelector('.details-button').addEventListener('click', (e) => {
-    const card = document.querySelector('flight-card');
-    card.opened = !card.opened;
-  });
-
-  </script>
-</body>
-
+      document
+        .querySelector(".details-button")
+        .addEventListener("click", (e) => {
+          const card = document.querySelector("flight-card");
+          card.opened = !card.opened;
+        });
+    </script>
+  </body>
 </html>

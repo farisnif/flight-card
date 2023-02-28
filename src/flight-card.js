@@ -288,6 +288,7 @@ export class FlightCard extends LitElement {
         <div class="container">
           <div class="header">
             <h1>${this.name}</h1>
+            <!-- <h1>Name</h1> -->
           </div>
           <img class="image" src="${planePhoto}" alt="${this.altText}" />
           <div class="subheader">
@@ -296,7 +297,6 @@ export class FlightCard extends LitElement {
             <h2>Max Altitude: ${this.maxAltitude}</h2>
           </div>
         </div>
-
         <details
           class="details"
           .open="${this.opened}"
