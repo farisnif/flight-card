@@ -125,6 +125,21 @@ export class FlightCard extends LitElement {
         color: white;
         border: 6px solid orange;
       }
+      :host([accent-color="black"]) .crd {
+        background-color: var(--flight-card-accent-color, black);
+        color: white;
+        border: 6px solid red;
+      }
+      :host([accent-color="orange"]) .crd {
+        background-color: var(--flight-card-accent-color, orange);
+        color: white;
+        border: 6px solid turquoise;
+      }
+      :host([accent-color="violet"]) .crd {
+        background-color: var(--flight-card-accent-color, violet);
+        color: white;
+        border: 6px solid navajowhite;
+      }
 
       .crd {
         padding: var(--flight-card-wrapper-border-padding, 12px);

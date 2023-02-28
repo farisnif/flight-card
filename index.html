@@ -27,7 +27,7 @@
     }
 
     flight-card::part(meme webcomponent stuff) {
-      margin: 6px
+      margin: 6px;
     }
     
       /* flight-card[accent-color="earth"] {
@@ -62,7 +62,7 @@
   <script type="module" src="./src/flight-card.js"></script>
   <script>
     document.querySelector(".somethingelse").addEventListener("click", function changeHeading(e) {
-       let instructions = prompt("Enter new plane name:")
+       let instructions = prompt("Enter new plane name:");
        if(instructions) {
         document.querySelector('flight-card').shadowRoot.querySelector("h1").innerHTML = instructions;
        }
@@ -76,16 +76,16 @@ document.querySelector(".addOne").addEventListener("click", function addCard(e) 
 document.querySelector(".remove").addEventListener("click", function removeCard(e) {
     const allFlightCards = document.querySelectorAll('flight-card');
     console.log(allFlightCards);
-    console.log(allFlightCards.length)
+    console.log(allFlightCards.length);
     if (allFlightCards.length > 1) {
       console.log(allFlightCards[allFlightCards.length - 1]);
-      document.body.removeChild(allFlightCards[allFlightCards.length - 1])
+      document.body.removeChild(allFlightCards[allFlightCards.length - 1]);
     }
   });
 
 document.querySelector(".colorChanger").addEventListener("click", function changeColor(e) {
      const div = document.querySelector('flight-card').shadowRoot.querySelector('.crd'); 
-     const colors = ["red", "green", "purple"]
+     const colors = ["red", "green", "purple", "black", "orange", "violet"];
      const randomColor = colors[Math.floor(Math.random() * colors.length)];
      document.querySelector("flight-card").accentColor = randomColor;
 });
