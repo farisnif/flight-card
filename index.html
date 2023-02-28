@@ -63,9 +63,6 @@
         .addEventListener("click", function changeHeading(e) {
           let instructions = prompt("Enter new plane name:");
           if (instructions) {
-            // document
-            //   .querySelector("flight-card")
-            //   .shadowRoot.querySelector("h1").innerText = instructions;
             document.querySelector("flight-card").name = instructions;
           }
         });
@@ -106,6 +103,7 @@
             "black",
             "orange",
             "violet",
+            "blue"
           ];
           const randomColor = colors[Math.floor(Math.random() * colors.length)];
           document.querySelector("flight-card").accentColor = randomColor;

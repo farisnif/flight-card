@@ -5,7 +5,7 @@ const planePhoto = new URL(
   "https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg"
 ).href;
 const memeImage = new URL(
-  "https://media.tenor.com/UygWxuaLUnUAAAAd/lebron-lebron-james.gif"
+  "https://ftw.usatoday.com/wp-content/uploads/sites/90/2013/11/bron.jpg?w=640"
 ).href;
 export class FlightCard extends LitElement {
   static get properties() {
@@ -70,7 +70,7 @@ export class FlightCard extends LitElement {
       ", and maximum altitude of " +
       this.maxAltitude +
       ".";
-    this.memeTop = "LeDancer";
+    this.memeTop = "LeHappy";
     this.memeBottom = "this is for you";
     this.accentColor = null;
     this.opened = false;
@@ -106,10 +106,7 @@ export class FlightCard extends LitElement {
 
   static get styles() {
     return css`
-      /* :host([accent-color="blue"]) .card {
-        background-color: blueviolet;
-        color: white;
-      } */
+      
       :host([accent-color="red"]) .crd {
         background-color: var(--flight-card-accent-color, red);
         color: white;
@@ -140,6 +137,12 @@ export class FlightCard extends LitElement {
         color: white;
         border: 6px solid navajowhite;
       }
+      :host([accent-color="blue"]) .crd {
+        background-color: var(--flight-card-accent-color, rgb(41, 161, 201));
+        color: white;
+        border: 6px solid black;
+      }
+
 
       .crd {
         padding: var(--flight-card-wrapper-border-padding, 12px);
