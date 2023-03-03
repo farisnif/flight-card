@@ -53,6 +53,10 @@ export class FlightCard extends LitElement {
         attribute: "accent-color",
       },
       opened: { type: Boolean, reflect: true },
+      img: {
+        type: String,
+        reflect: true,
+      }
     };
   }
 
