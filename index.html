@@ -38,6 +38,9 @@
   </head>
 
   <body>
+
+    <team-roster></team-roster>
+
     <div class="buttons">
       <button class="somethingelse">Change Title</button>
       <button class="addOne">Add</button>
@@ -50,8 +53,10 @@
         Fun Fact:
       </div>
     </flight-card>
-
-    <script type="module" src="./src/flight-card.js"></script>
+    <script type="module">
+      import "./src/flight-card.js";
+      import "./src/team-roster.js";
+    </script>
     <script>
       document
         .querySelector(".somethingelse")

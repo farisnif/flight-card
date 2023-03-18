@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Boeing 737",
+        "location": "Montreal",
+        "maxSpeed": "652mph",
+        "maxAltitude": "41,763ft",
+        "memeTop": "Lehappy"
+    },
+    {
+        "name": "Boeing 737 Max",
+        "location": "Philly",
+        "maxSpeed": "900mph",
+        "maxAltitude": "42,973ft",
+        "memeTop": "Lehappy"
+    },
+    {
+        "name": "Boeing 747-8",
+        "location": "Orlando",
+        "maxSpeed": "612mph",
+        "maxAltitude": "43,853ft",
+        "memeTop": "Lehappy"
+    },
+    {
+        "name": "Boeing 787",
+        "location": "Compton",
+        "maxSpeed": "612mph",
+        "maxAltitude": "45,853ft",
+        "memeTop": "Lehappy"
+    }
+]

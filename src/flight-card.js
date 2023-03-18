@@ -1,12 +1,6 @@
 import { LitElement, html, css } from "lit";
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
-const planePhoto = new URL(
-  "https://media.cntraveler.com/photos/576834ff90b3537d7c010c05/16:9/w_2560%2Cc_limit/GettyImages-162672165.jpg"
-).href;
-const memeImage = new URL(
-  "https://ftw.usatoday.com/wp-content/uploads/sites/90/2013/11/bron.jpg?w=640"
-).href;
 export class FlightCard extends LitElement {
   static get properties() {
     return {
@@ -56,18 +50,24 @@ export class FlightCard extends LitElement {
       img: {
         type: String,
         reflect: true,
-      }
+      },
+      planePhoto: {type: String},
+      memeImage: {type: String}
     };
   }
 
   constructor() {
     super();
+    this.planePhoto = new URL(
+      "https://media.wired.com/photos/593393739aae0b5821d6cc9e/master/w_2560%2Cc_limit/K64998-41.jpg"
+    ).href;
+    this.memeImage = new URL("https://ftw.usatoday.com/wp-content/uploads/sites/90/2013/11/bron.jpg?w=640").href;
     this.name = "Boeing 787";
     this.location = "Cleveland";
     this.maxSpeed = "500mph";
     this.maxAltitude = "40,000ft";
     this.planeStatement =
-      "This is a photo of a Boeing 787 taking off in " +
+      "This is a photo of a " + this.name + " taking off in " +
       this.location +
       ". This plane has a maximum speed of " +
       this.maxSpeed +
@@ -297,7 +297,7 @@ export class FlightCard extends LitElement {
             <h1>${this.name}</h1>
             <!-- <h1>Name</h1> -->
           </div>
-          <img class="image" src="${planePhoto}" alt="${this.altText}" />
+          <img class="image" src="${this.planePhoto}" alt="${this.altText}" />
           <div class="subheader">
             <h2>Location: ${this.location}</h2>
             <h2>Max Speed: ${this.maxSpeed}</h2>
@@ -316,7 +316,7 @@ export class FlightCard extends LitElement {
 
         <meme-maker
           part="meme webcomponent stuff"
-          image-url="${memeImage}"
+          image-url="${this.memeImage}"
           top-text="${this.memeTop}"
           bottom-text=" ${this.location} ${this.memeBottom}"
           font-size="28px"
