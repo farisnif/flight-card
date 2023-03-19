@@ -51,7 +51,7 @@ export class TeamRoster extends LitElement {
         <div class="wrapper">
             ${this.players.map(player => html`
             <div class="item">
-                <flight-card name="${player.name}" location="${player.location}" maxSpeed="${player.maxSpeed}" maxAltitude="${player.maxAltitude}" memeTop="${player.memeTop}"></flight-card>
+                <flight-card name="${player.name}" location="${player.location}" maxSpeed="${player.maxSpeed}" maxAltitude="${player.maxAltitude}" memeTop="${player.memeTop}" planePhoto="${player.planePhoto}"></flight-card>
             </div>
             `)}
         </div>
