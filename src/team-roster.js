@@ -17,7 +17,7 @@ export class TeamRoster extends LitElement {
         this.updateRoster();
     }
     updateRoster() {
-        const address = new URL('../api/roster.jk', import.meta.url).href;
+        const address = new URL('../api/roster.js', import.meta.url).href;
         fetch(address).then((response) => {
             if (response.ok) {
                 return response.json()
