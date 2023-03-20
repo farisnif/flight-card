@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit';
 import "./flight-card";
-
 export class TeamRoster extends LitElement {
     static get tag() {
         return 'team-roster';
@@ -11,7 +10,6 @@ export class TeamRoster extends LitElement {
           team: { type: String },
         }
     }
-
     constructor() {
         super();
         this.players = [];
@@ -19,8 +17,8 @@ export class TeamRoster extends LitElement {
         this.updateRoster();
     }
     updateRoster() {
-        const address = new URL('../api/roster', import.meta.url).href;
-        fetch(address).then((response) => {
+        const address = new URL('../assets/roster.json', import.meta.url).href;
+        const data = fetch(address).then((response) => {
             if (response.ok) {
                 return response.json()
             }
@@ -44,14 +42,13 @@ export class TeamRoster extends LitElement {
         }
     `;
     }
-
     render() {
         return html`
         <h2>${this.team}</h2>
         <div class="wrapper">
             ${this.players.map(player => html`
             <div class="item">
-                <flight-card name="${player.name}" location="${player.location}" maxSpeed="${player.maxSpeed}" maxAltitude="${player.maxAltitude}" memeTop="${player.memeTop}" planePhoto="${player.planePhoto}" planeStatement="${player.planeStatement}"></flight-card>
+                <flight-card name="${player.name}" location="${player.location}" maxSpeed="${player.maxSpeed}" maxAltitude="${player.maxAltitude}" memeTop="${player.memeTop}" planePhoto="${player.planePhoto}"></flight-card>
             </div>
             `)}
         </div>
