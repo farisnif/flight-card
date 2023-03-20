@@ -6,7 +6,8 @@ export default async function handler(request, res) {
             "location": "Montreal",
             "maxSpeed": "652mph",
             "maxAltitude": "41,763ft",
-            "memeTop": "Lehappy"
+            "memeTop": "Lehappy",
+            "planeStatement": "This is a photo of a Boeing 737 taking off in Montreal. This plane has a maximum speed of 652mph, and maximum altitude of 41,763ft."
         },
         {
             "planePhoto": "https://ik.imgkit.net/3vlqs5axxjf/TW/uploadedImages/Art/2022/1226/T1226BOEING737MAX-10_C.jpg?tr=w-1200%2Cfo-auto",
@@ -14,7 +15,9 @@ export default async function handler(request, res) {
             "location": "Philly",
             "maxSpeed": "900mph",
             "maxAltitude": "42,973ft",
-            "memeTop": "Lehappy"
+            "memeTop": "Lehappy",
+            "planeStatement": "This is a photo of a Boeing 737 Max taking off in Philly. This plane has a maximum speed of 900mph, and maximum altitude of 42,973ft."
+
         },
         {
             "planePhoto": "https://www.corporatejetinvestor.com/wp-content/uploads/2019/03/Boeing-747-8-Intercontinental.jpg",
@@ -22,7 +25,8 @@ export default async function handler(request, res) {
             "location": "Orlando",
             "maxSpeed": "619mph",
             "maxAltitude": "43,853ft",
-            "memeTop": "Lehappy"
+            "memeTop": "Lehappy",
+            "planeStatement": "This is a photo of a Boeing 747 taking off in Orlando. This plane has a maximum speed of 619mph, and maximum altitude of 43,853ft."
         },
         {
             "planePhoto": "https://d3lcr32v2pp4l1.cloudfront.net/Pictures/1024x536/6/7/4/80674_boeing78710.boeing_837065.jpg",
@@ -30,7 +34,8 @@ export default async function handler(request, res) {
             "location": "Compton",
             "maxSpeed": "612mph",
             "maxAltitude": "45,853ft",
-            "memeTop": "Lehappy"
+            "memeTop": "Lehappy",
+            "planeStatement": "This is a photo of a Boeing 787 taking off in Compton. This plane has a maximum speed of 612mph, and maximum altitude of 45,853ft."
         }
     ];
   res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
