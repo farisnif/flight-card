@@ -26,6 +26,15 @@ export default async function handler(request, res) {
             "maxAltitude": "43,853ft",
             "memeTop": "Lehappy",
             "planeStatement": "This is a photo of a Boeing 747-8 taking off in Orlando. This plane has a maximum speed of 612mph, and maximum altitude of 43,853ft."
+        },
+        {
+            "planePhoto": "https://d3lcr32v2pp4l1.cloudfront.net/Pictures/1024x536/6/7/4/80674_boeing78710.boeing_837065.jpg",
+            "name": "Boeing 787",
+            "location": "Compton",
+            "maxSpeed": "612mph",
+            "maxAltitude": "45,853ft",
+            "memeTop": "Lehappy",
+            "planeStatement": "This is a photo of a Boeing 787 taking off in Compton. This plane has a maximum speed of 612mph, and maximum altitude of 45,853ft."
         }
     ];
   res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');
