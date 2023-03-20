@@ -6,10 +6,9 @@
         "maxSpeed": "652mph",
         "maxAltitude": "41,763ft",
         "memeTop": "Lehappy"
-        
     },
     {
-        "planePhoto":"https://ik.imgkit.net/3vlqs5axxjf/TW/uploadedImages/Art/2022/1226/T1226BOEING737MAX-10_C.jpg?tr=w-1200%2Cfo-auto",
+        "planePhoto": "https://ik.imgkit.net/3vlqs5axxjf/TW/uploadedImages/Art/2022/1226/T1226BOEING737MAX-10_C.jpg?tr=w-1200%2Cfo-auto",
         "name": "Boeing 737 Max",
         "location": "Philly",
         "maxSpeed": "900mph",
@@ -17,7 +16,7 @@
         "memeTop": "Lehappy"
     },
     {
-        "planePhoto":"https://www.corporatejetinvestor.com/wp-content/uploads/2019/03/Boeing-747-8-Intercontinental.jpg",
+        "planePhoto": "https://www.corporatejetinvestor.com/wp-content/uploads/2019/03/Boeing-747-8-Intercontinental.jpg",
         "name": "Boeing 747-8",
         "location": "Orlando",
         "maxSpeed": "612mph",
@@ -25,7 +24,7 @@
         "memeTop": "Lehappy"
     },
     {
-        "planePhoto":"https://d3lcr32v2pp4l1.cloudfront.net/Pictures/1024x536/6/7/4/80674_boeing78710.boeing_837065.jpg",
+        "planePhoto": "https://d3lcr32v2pp4l1.cloudfront.net/Pictures/1024x536/6/7/4/80674_boeing78710.boeing_837065.jpg",
         "name": "Boeing 787",
         "location": "Compton",
         "maxSpeed": "612mph",
